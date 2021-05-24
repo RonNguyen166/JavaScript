@@ -49,15 +49,19 @@
       // SortTang(array);
       console.log(array);
       // -------------------nữ lớn tính lý lớn hơn 5----------------
+     var bai4 = (array)=>{
       var list = [];
       for (var i = 0; i < array.length; i++) {
         if (array[i].gender === "nữ" && array[i].mark > 5) {
           list.push(array[i]);
         }
       }
-      console.log("danh sách nữ có điểm tích luy lớn 5");
-      console.log(list);
+      return list;
+     }
+     console.log("nữ lớn tính lý lớn hơn 5" );
+     console.log(bai4(array));
       // ----------------Lọc ra danh sách sinh viên có điểm toán hoặc lý lớn hơn 8.0------------------
+     var bai5 = (array)=>{
       var item = [];
       for (var i = 0; i < array.length; i++) {
         for (j = 0; j < array[i].subject.length; j++) {
@@ -68,8 +72,10 @@
           }
         }
       }
+      return item;
+     }
       console.log("danh sách sinh viên có điểm toán hoặc lý lớn hơn 8.0");
-      console.log(item);
+      console.log(bai5(array));
       function max(array) {
         var list = [];
         var max = 0;
@@ -96,6 +102,8 @@
 
         return list;
       }
+      //Tìm sinh viên có điểm môn Toán cao nhất và thấp nhất
+      console.log("sinh viên có điểm môn Toán cao nhất");
       console.log(max(array));
       function min(array) {
         var list = [];
@@ -125,18 +133,21 @@
         }
         return list;
       }
-      // console.log(min(array));
+      console.log("sinh viên có điểm môn Toán thấp nhất");
+      console.log(min(array));
       // ---------------------------Xoá khỏi danh sách sinh viên có điểm tích luỹ là 0----------
-      const deleteSt0 = (array) => {
+      var deleteSt0 = (array) => {
         for (var i = 0; i < array.length; i++) {
           if (array[i].mark === 0) {
             array.splice(i, 1);
             i--;
           }
         }
+        return array;
       };
-      deleteSt0(array);
-      console.log(array);
+      console.log("Xoá khỏi danh sách sinh viên có điểm tích luỹ là 0");
+      console.log(deleteSt0(array));
+      //Thêm 03 sinh viên mới vào danh sách.
       var Student11 = new Student("K", 0, "nam", [new Subjects("toan", 7),new Subjects("ly", 7)]);
       var Student12 = new Student("K", 0, "nam", [new Subjects("toan", 7),new Subjects("ly", 7)]);
       var Student13 = new Student("K", 0, "nam", [new Subjects("toan", 7),new Subjects("ly", 7)]);
